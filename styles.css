@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+} 
+
+body {
+    background-image: url("pexels-photo-317385.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% cover;
+}
+
+.leftTile img, .rightTile img {
+    display: block;
+    margin: auto;
+}
+    
+@media screen and (min-width: 1px) and (max-width: 480px) {
+    .leftTile, .rightTile {
+        background-color: gray;
+        min-width: 210px;
+        max-width: 300px;
+        width: 80%;
+        height: 200px;
+        margin: 10px auto;
+    }
+    
+    #skills, #projects, #contact {
+        margin: auto;
+        max-width: 320px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) /* ?????? */ {
+    .leftTile, .rightTile {
+        background-color: aquamarine;
+        max-width: 300px;
+        min-width: 210px;
+        height: 200px;
+        margin: 10px auto;
+    }
+    
+    .leftTile {
+        clear: both;
+        float: left;
+    }
+    
+    .rightTile {
+        float: right;
+    }
+    
+    #skills, #projects, #contact {
+        margin: auto;
+        max-width: 480px;
+    }
+    #projects {
+        background-color: gray;
+    }
+}
