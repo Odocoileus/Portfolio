@@ -1,22 +1,39 @@
+/*
+-Dotted sidebar: always displayed on largest breakpoint for full height of conatiner, but z index in below all others
+-Splash screen is 80vh
+    -also needs to scroll away
+-splash screen becomes nav in small breakpoint
+*/
 * {
     margin: 0;
     padding: 0;
 } 
 
 body {
-    background-image: url("pexels-photo-317385.jpeg");
+    background-image: url("pexels-photo-547115.jpeg");
     background-repeat: no-repeat;
     background-size: 100% cover;
+    background-position: center;
 }
 
 .leftTile img, .rightTile img {
     display: block;
     margin: auto;
 }
-    
-@media screen and (min-width: 1px) and (max-width: 480px) {
+
+p, h1 {
+    font-family: 'Montserrat', sans-serif;
+/*    text-shadow: 0px 0px 1.5px rgba(12, 12, 82, 1);*/
+}
+
+ul {
+
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 600px) { /* small */
     .leftTile, .rightTile {
-        background-color: gray;
+        background: rgba(255, 255, 255, 0.3);
         min-width: 210px;
         max-width: 300px;
         width: 80%;
@@ -26,17 +43,30 @@ body {
     
     #skills, #projects, #contact {
         margin: auto;
-        max-width: 320px;
+        width: 80%;
     }
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) /* ?????? */ {
+@media screen and (min-width: 601px) and (max-width: 750px) /* medium */ {
+    #projects {
+        overflow: auto;
+    }
+    
+    body {
+        background-attachment: fixed;
+    }
+    
+    #tileWrapper {
+        width: 85%;
+        margin: auto;
+    }
+    
     .leftTile, .rightTile {
-        background-color: aquamarine;
+        background: rgba(255, 255, 255, 0.3);
         max-width: 300px;
         min-width: 210px;
         height: 200px;
-        margin: 10px auto;
+        margin: 10px 10px auto;
     }
     
     .leftTile {
@@ -49,10 +79,73 @@ body {
     }
     
     #skills, #projects, #contact {
-        margin: auto;
-        max-width: 480px;
+        margin: 10px auto;
+        background: rgba(255, 255, 255, 0.5);
+        width: 90%;
+        display: block;
     }
+}
+
+@media screen and (min-width: 751px) /* extra large */  {
+    main {
+        margin-top: 100px;
+    }
+    
+    header {
+        height: 10vh;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.65);
+        margin-bottom: 10px;
+        border-bottom: 7px solid rgba(156, 94, 249, .7);
+        position: fixed;
+        top: 0px;
+    }
+    
+    #mainContainer {
+        width: 90%;
+        margin: auto;
+    }
+    
+    #tileWrapper {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+        grid-template-rows: repeat(4, 200px);
+        margin: auto;
+    }
+    
+     #tileWrapper > div {
+         background: rgba(255, 255, 255, 0.3);
+    }
+    
+    #tileWrapper > div > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #skills, #projects, #contact {
+        background: rgba(255, 255, 255, 0.3);
+        display: inline-block;
+        padding-left: 3%;
+    }
+    
+    #skills {
+        width: 30%;
+    }
+    
     #projects {
-        background-color: gray;
+        width: 60%;
+        float: right;
+        padding-right: 3%;
+        padding-bottom: 3%;
+        min-height: 1px;
+        overflow: hidden;
+        margin-bottom: 100px;
+    }
+    
+     #contact {
+        width: 30%;
+        margin-top: 10px;
     }
 }
